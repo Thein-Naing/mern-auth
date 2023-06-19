@@ -1,0 +1,6 @@
+// node
+// require('crypto').randomBytes(64).toString('hex')
+// you will get 64 digit secret key & copy and paste it in .env.
+// then create REFREH_TOKEN_SECRET in .env , create one more
+// require('crypto').randomBytes(64).toString('hex') and you will get another secret
+// key copy and paste it in  REFREH_TOKEN_SECRET.
