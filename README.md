@@ -71,3 +71,12 @@ const authenticateToken(req, res, next) => {
 
 }
 
+- // afetr Authenticate User and verify token , we will filter posts for verified user.
+- 
+app.get("/posts", authenticateToken, (rea, res) => {
+
+  // res.json(posts);
+  
+     res.json(posts.filter(post => post.username === req.user.name));
+
+});
