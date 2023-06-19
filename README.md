@@ -43,7 +43,7 @@ then create app.post ('/login') and inside callback function create jwt token li
 <img width="960" alt="image" src="https://github.com/Thein-Naing/mern-auth/assets/117463446/e01ffca4-c839-4a0f-aa73-d3042267f62e">
 
 
-// after sending post login, you will get accessToken from postman and then you have to authenticate.
+-// after sending post login, you will get accessToken from postman and then you have to authenticate.
 
 const authenticateToken(req, res, next) => {
 
@@ -72,7 +72,7 @@ const authenticateToken(req, res, next) => {
 }
 
 - // afetr Authenticate User and verify token , we will filter posts for verified user.
-- 
+  
 app.get("/posts", authenticateToken, (rea, res) => {
 
   // res.json(posts);
