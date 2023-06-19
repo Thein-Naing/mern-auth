@@ -1,4 +1,4 @@
-# mern-auth
+# mern-auth shot notes and test.
 
 npm init -y
 
