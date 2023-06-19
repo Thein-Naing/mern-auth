@@ -87,6 +87,8 @@ Use this token in get request in postman and you will get the response of authen
 <img width="960" alt="image" src="https://github.com/Thein-Naing/mern-auth/assets/117463446/e473198f-fd1f-4ee1-b876-19f168a5bf2a">
 
 <img width="960" alt="image" src="https://github.com/Thein-Naing/mern-auth/assets/117463446/33701f14-e781-42b4-bc03-c1858d64b7a9">
+<img width="960" alt="image" src="https://github.com/Thein-Naing/mern-auth/assets/117463446/e925d970-f3a0-455e-9f4a-7470005b97ee">
 
-I use without actual usernames and i tested in two different functions/Bearer Token && JWT Bearer with ACCESS_SECRET_TOKEN and random post bearer token sincewe have no usernames , postman/jwt send back empty []. Anyway JWT is working fine.
+
+I use without actual usernames and i tested in two different functions/Bearer Token & JWT Bearer with ACCESS_SECRET_TOKEN and random post bearer token since we have no usernames , postman/jwt send back empty []. Anyway JWT is working fine.
 
