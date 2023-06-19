@@ -18,7 +18,7 @@ const posts = [
 ];
 
 // afetr Authenticate User and verify token , we will filter posts for verified user.
-app.get("/posts", authenticateToken, (rea, res) => {
+app.get("/posts", authenticateToken, (req, res) => {
   // res.json(posts);
      res.json(posts.filter(post => post.username === req.user.name));
 
@@ -44,7 +44,7 @@ app.post('/login', (req, res)=> {
 })
 
 // after sending post login, you will get accessToken from postman and then you have to authenticate.
-const authenticateToken(req, res, next) => {
+function  authenticateToken(req, res, next) {
   const authHeader = req.headers['authorization']
   const token = authHeader && authHeader.split(' ')[1]
   if(token === null)
@@ -55,7 +55,7 @@ const authenticateToken(req, res, next) => {
     return res.sendStatus(403)
 
     req.user = user
-    next()
+    next();
   })
 
 }
