@@ -45,7 +45,7 @@ then create app.post ('/login') and inside callback function create jwt token li
 
 -// after sending post login, you will get accessToken from postman and then you have to authenticate.
 
-const authenticateToken(req, res, next) => {
+function authenticateToken(req, res, next) {
 
   const authHeader = req.headers['authorization']
   
