@@ -15,6 +15,14 @@ const posts = [
     username: "naing",
     title: "Hi",
   },
+  {
+    username: "swam",
+    title: "Bonjour"
+  },
+
+
+
+
 ];
 
 // afetr Authenticate User and verify token , we will filter posts for verified user.
@@ -47,7 +55,7 @@ app.post('/login', (req, res)=> {
 function  authenticateToken(req, res, next) {
   const authHeader = req.headers['authorization']
   const token = authHeader && authHeader.split(' ')[1]
-  if(token === null)
+  if(token == null)
   return res.sendStatus(401)
   // verify token.
   jwt.verify(token, process.env.ACCESS_SECRET_TOKEN, (error, user) => {
