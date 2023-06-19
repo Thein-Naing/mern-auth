@@ -41,3 +41,33 @@ then create app.post ('/login') and inside callback function create jwt token li
 }) and test it in postman.
 
 <img width="960" alt="image" src="https://github.com/Thein-Naing/mern-auth/assets/117463446/e01ffca4-c839-4a0f-aa73-d3042267f62e">
+
+
+// after sending post login, you will get accessToken from postman and then you have to authenticate.
+
+const authenticateToken(req, res, next) => {
+
+  const authHeader = req.headers['authorization']
+  
+  const token = authHeader && authHeader.split(' ')[1]
+  
+  if(token === null)
+  
+  return res.sendStatus(401)
+  
+  // verify token.
+  
+  jwt.verify(token, process.env.ACCESS_SECRET_TOKEN, (error, user) => {
+  
+    if(error)
+    
+    return res.sendStatus(403)
+
+    req.user = user
+    
+    next()
+    
+  })
+
+}
+
