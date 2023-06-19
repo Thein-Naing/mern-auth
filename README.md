@@ -45,7 +45,7 @@ then create app.post ('/login') and inside callback function create jwt token li
 
 -// after sending post login, you will get accessToken from postman and then you have to authenticate.
 
-const authenticateToken(req, res, next) => {
+function authenticateToken(req, res, next) {
 
   const authHeader = req.headers['authorization']
   
@@ -80,3 +80,15 @@ app.get("/posts", authenticateToken, (req, res) => {
      res.json(posts.filter(post => post.username === req.user.name));
 
 });
+
+//then requestlogin post in postman and generate a accessToken.
+<img width="960" alt="image" src="https://github.com/Thein-Naing/mern-auth/assets/117463446/10329992-d80a-43ab-8366-23d213d54599">
+Use this token in get request in postman and you will get the response of authenticate username/title object.
+<img width="960" alt="image" src="https://github.com/Thein-Naing/mern-auth/assets/117463446/e473198f-fd1f-4ee1-b876-19f168a5bf2a">
+
+<img width="960" alt="image" src="https://github.com/Thein-Naing/mern-auth/assets/117463446/33701f14-e781-42b4-bc03-c1858d64b7a9">
+<img width="960" alt="image" src="https://github.com/Thein-Naing/mern-auth/assets/117463446/e925d970-f3a0-455e-9f4a-7470005b97ee">
+
+
+I use without actual usernames and i tested in two different functions/Bearer Token & JWT Bearer with ACCESS_SECRET_TOKEN and random post bearer token since we have no usernames , postman/jwt send back empty []. Anyway JWT is working fine.
+
