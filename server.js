@@ -17,7 +17,7 @@ const posts = [
   },
 ];
 
-app.get("/posts", (rea, res) => {
+app.get("/posts", authenticateToken, (rea, res) => {
   res.json(posts);
 });
 
@@ -40,8 +40,22 @@ app.post('/login', (req, res)=> {
   })
 })
 
+// after sending post login, you will get accessToken from postman and then you have to authenticate.
+const authenticateToken(req, res, next) => {
+  const authHeader = req.headers['authorization']
+  const token = authHeader && authHeader.split(' ')[1]
+  if(token === null)
+  return res.sendStatus(401)
+  // verify token.
+  jwt.verify(token, process.env.ACCESS_SECRET_TOKEN, (error, user) => {
+    if(error)
+    return res.sendStatus(403)
 
-//
+    req.user = user
+    next()
+  })
+
+}
 
 
 
