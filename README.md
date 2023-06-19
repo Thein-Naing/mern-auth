@@ -80,3 +80,7 @@ app.get("/posts", authenticateToken, (req, res) => {
      res.json(posts.filter(post => post.username === req.user.name));
 
 });
+
+//then requestlogin post in postman and generate a accessToken.
+<img width="960" alt="image" src="https://github.com/Thein-Naing/mern-auth/assets/117463446/10329992-d80a-43ab-8366-23d213d54599">
+Use this token in get request in postman and you will get the response of authenticate username/title object.
